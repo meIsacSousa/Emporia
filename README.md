@@ -28,7 +28,7 @@
 
 ### Configurando Banco de Dados Postgre para o projeto
 1. Na pasta do projeto, vá em *Emporia-main\src\main\resources* e abra o *application.properties* como o bloco de notas para edita-lo.
-2. Em *spring.datasource.username* coloque o seu usuário do postgre (*postgre* é o usuário padrão).
+2. Em *spring.datasource.username* coloque o seu usuário do postgre (*postgres* é o usuário padrão).
 3. Em *spring.datasource.password* coloque a sua senha do postgre.
 4. **Salve** as alterações e feche o bloco de notas.
 5. Abra o **pgAdmin**.
