@@ -42,5 +42,6 @@
 4. Clique em Browse e selecione o repositório do projeto. 
 5. Tenha certeza que, após selecionar o repositório, o */pom.xml* está selecionado e clique em **Finish**.
 6. No Package Explorer, clique com o botão direito no projeto, vá em Run as -> Maven clean.
-7. No Package Explorer, clique com o botão direito no projeto, vá em Run as -> Maven Install para iniciar a aplicação.
-8. Para acessar a documentação da API, apos iniciar aplicação, acesse: [Emporia](http://localhost:8080/swagger-ui.html)
+7. No Package Explorer, clique com o botão direito no projeto, vá em Run as -> Maven Install para instalar as depêndencias da aplicação.
+8. No arquivo Emporia/src/main/java/br/edu/ufersa/Emporia/EmporiaApplication.java clica com o botão direito e seleciona Run as -> Java Application
+9. Para acessar a documentação da API, apos iniciar aplicação, acesse: [Emporia](http://localhost:8080/swagger-ui.html)
