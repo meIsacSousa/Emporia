@@ -8,7 +8,7 @@ import br.edu.ufersa.Emporia.models.Casa;
 public class ShellSort {
 	public Double sort(List<Casa> vvenda){
 	
-	List<Double> vec = new ArrayList<Double>();
+	ArrayList<Double> vec = new ArrayList<Double>();
 	
 	//Criando novo vetor com os preços
 	for(int i = 0; i < vvenda.size(); i++) {
