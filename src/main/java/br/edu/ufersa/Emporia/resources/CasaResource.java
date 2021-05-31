@@ -78,7 +78,7 @@ public class CasaResource {
 	}
 	
 	@GetMapping("/casas/menorpreco")
-	@ApiOperation(value="Retorna casas de acordo com o seu preço crescente")
+	@ApiOperation(value="Retorna a casa com menor preco")
 	public Casa preco(){
 		List<Casa> vvenda = new ArrayList<Casa>();
 		ShellSort ss = new ShellSort();
