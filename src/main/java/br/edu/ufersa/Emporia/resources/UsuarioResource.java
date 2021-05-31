@@ -52,6 +52,6 @@ public class UsuarioResource {
 	@GetMapping("/usuarios/nome/{nome}")
 	@ApiOperation(value="Retorna um único usuário")
 	public Usuario show (@PathVariable(value="nome") String nome) {
-		return usuarioRepository.findByNome(nome);
+		return usuarioRepository.findByNomeContainingIgnoreCase(nome);
 	}
 }
