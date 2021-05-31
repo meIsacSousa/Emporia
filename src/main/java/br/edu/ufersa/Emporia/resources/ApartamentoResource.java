@@ -1,10 +1,12 @@
 package br.edu.ufersa.Emporia.resources;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import br.edu.ufersa.Emporia.ShellSort;
 import br.edu.ufersa.Emporia.models.Apartamento;
 import br.edu.ufersa.Emporia.repository.ApartamentoRepository;
 import io.swagger.annotations.Api;
@@ -49,5 +51,18 @@ public class ApartamentoResource {
 		return apartamentoRepository.save(apartamento);
 	}
 	
+	//============================================================================
+	
+	@GetMapping("/apartamentos/venda")
+	@ApiOperation(value="Retorna apartamentos a venda")
+	public List<Apartamento> venda (boolean venda) {
+		return apartamentoRepository.findByVenda(true);
+	}
+	
+	@GetMapping("/apartamentos/aluguel")
+	@ApiOperation(value="Retorna apartamentos alugáveis")
+	public List<Apartamento> aluguel (boolean aluguel) {
+		return apartamentoRepository.findByAluguel(true);
+	}
 	
 }

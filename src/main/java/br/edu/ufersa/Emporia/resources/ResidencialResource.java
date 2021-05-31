@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import br.edu.ufersa.Emporia.models.Casa;
 import br.edu.ufersa.Emporia.models.Residencial;
 import br.edu.ufersa.Emporia.repository.ResidencialRepository;
 import io.swagger.annotations.Api;
@@ -49,5 +50,18 @@ public class ResidencialResource {
 		return residencialRepository.save(residencial);
 	}
 	
+	//===================================================================
+	
+	@GetMapping("/residenciais/bairro/{bairro}")
+	@ApiOperation(value="Retorna residenciais buscando pela rua")
+	public List<Residencial> bairro (@PathVariable(value="bairro") String bairro) {
+		return residencialRepository.findByBairroContainingIgnoreCase(bairro);
+	}
+	
+	@GetMapping("/residenciais/cep/{cep}")
+	@ApiOperation(value="Retorna residenciais buscando pelo cep")
+	public List<Residencial> cep (@PathVariable(value="cep") String cep) {
+		return residencialRepository.findByCep(cep);
+	}
 
 }

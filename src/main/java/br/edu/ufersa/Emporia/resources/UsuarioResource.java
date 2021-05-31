@@ -49,4 +49,9 @@ public class UsuarioResource {
 		return usuarioRepository.save(usuario);
 	}
 	
+	@GetMapping("/usuarios/nome/{nome}")
+	@ApiOperation(value="Retorna um único usuário")
+	public Usuario show (@PathVariable(value="nome") String nome) {
+		return usuarioRepository.findByNome(nome);
+	}
 }

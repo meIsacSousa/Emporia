@@ -7,5 +7,6 @@ import br.edu.ufersa.Emporia.models.Usuario;
 public interface UsuarioRepository extends JpaRepository<Usuario, Long> {
 	
 	Usuario findById(long id);
+	Usuario findByNome(String nome);
 	
 }
