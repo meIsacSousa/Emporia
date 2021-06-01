@@ -3,6 +3,7 @@ package br.edu.ufersa.Emporia.resources;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
 import br.edu.ufersa.Emporia.models.Usuario;
@@ -35,6 +36,15 @@ public class UsuarioResource {
 	@ApiOperation(value="Adiciona um novo usuário")
 	public Usuario store (@RequestBody Usuario usuario) {
 		return usuarioRepository.save(usuario);
+	}
+	
+	@PostMapping("/usuarios/login")
+	@ApiOperation(value="Faz autenticação")
+	public String store (@RequestBody Usuario usuario, BindingResult bindingResult) {
+		if (bindingResult.hasErrors()) {
+            return "signup";
+        }
+        return "success";
 	}
 	
 	@DeleteMapping("/usuarios")
